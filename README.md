@@ -1,0 +1,1 @@
+# discord_connect_to_websocket.sh
