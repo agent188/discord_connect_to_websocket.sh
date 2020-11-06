@@ -4,3 +4,5 @@ Dependences:<br>
   websocat - https://github.com/vi/websocat/<br>
   netcat<br>
   jo - https://github.com/jpmens/jo<br>
+  jq<br>
+  curl<br>
