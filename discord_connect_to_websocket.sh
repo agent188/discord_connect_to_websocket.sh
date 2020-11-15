@@ -26,7 +26,7 @@ function AsyncProcessing()
     esac
 }
 pid=$$
-bot=$(curl -s -H "Authorization: Bot $tokenbot" "https://discord.com/api/gateway/bot")
+bot=$(curl -sS -H "Authorization: Bot $tokenbot" "https://discord.com/api/gateway/bot")
 url=$(echo "$bot" | jq -r '.url')
 if [[ ! $url || $url == 'null' ]]; then
     echo 'Failed get url'
@@ -76,7 +76,7 @@ do
     unset heartbeatpid
     randomPort=$(shuf -i 2000-65000 -n 1)
     echo "LOCALHOST LISTEN $randomPort PORT"
-    bot=$(curl -s -H "Authorization: Bot $tokenbot" "https://discord.com/api/gateway/bot")
+    bot=$(curl -sS -H "Authorization: Bot $tokenbot" "https://discord.com/api/gateway/bot")
     url=$(echo "$bot" | jq -r '.url')
     if [[ ! $url || $url == 'null' ]]; then
         echo 'Failed get url'
