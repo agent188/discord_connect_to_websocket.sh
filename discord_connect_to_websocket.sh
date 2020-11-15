@@ -28,6 +28,10 @@ function AsyncProcessing()
 pid=$$
 bot=$(curl -s -H "Authorization: Bot $tokenbot" "https://discord.com/api/gateway/bot")
 url=$(echo "$bot" | jq -r '.url')
+if [[ ! $url || $url == 'null' ]]; then
+    echo 'Failed get url'
+    exit 1
+fi
 while true
 do
     while read -r msg
@@ -74,5 +78,9 @@ do
     echo "LOCALHOST LISTEN $randomPort PORT"
     bot=$(curl -s -H "Authorization: Bot $tokenbot" "https://discord.com/api/gateway/bot")
     url=$(echo "$bot" | jq -r '.url')
+    if [[ ! $url || $url == 'null' ]]; then
+        echo 'Failed get url'
+        exit 1
+    fi
     resume=true
 done
