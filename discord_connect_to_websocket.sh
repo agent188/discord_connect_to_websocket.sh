@@ -69,6 +69,7 @@ do
     done < <(ncat -kl localhost $randomPort -m 10000000 | ./websocat "$url/?v=8&encoding=json" --ping-interval 1 --ping-timeout 2 -E -t)
     kill $heartbeatpid
     unset heartbeat
+    unset heartbeatpid
     randomPort=$(shuf -i 2000-65000 -n 1)
     echo "LOCALHOST LISTEN $randomPort PORT"
     bot=$(curl -s -H "Authorization: Bot $tokenbot" "https://discord.com/api/gateway/bot")
