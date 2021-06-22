@@ -6,3 +6,5 @@ Dependences:<br>
   jo - https://github.com/jpmens/jo<br>
   jq<br>
   curl<br>
+
+The script must be run in a loop
